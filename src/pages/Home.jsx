@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom'
+import Signup from './Signup'
 
 function Home() {
     return (
         <div className='homepage-container'>
             <p>Welcome to the stocktaking app</p>
+            <Signup/>
             <Link
                 to={'/login'}
                 className='link'
@@ -14,7 +16,7 @@ function Home() {
                 to={'/signup'}
                 className='link'
             >
-                Sign Up
+                Signup
             </Link>
         </div>
     )

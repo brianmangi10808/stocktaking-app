@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
 import Home from './pages/Home'
+import Signup from './pages/Signup'
 
 function App() {
     return (
@@ -8,6 +9,7 @@ function App() {
             <Router>
                 <div className='container'>
                     <Header />
+                    <Signup/>
                     <Routes>
                         <Route
                             path='/'
