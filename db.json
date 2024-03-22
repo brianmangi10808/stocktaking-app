@@ -1,0 +1,94 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "email": "user1@gmail.com",
+      "password": "hashed_password1"
+    },
+    {
+      "id": "2",
+      "email": "user2@gmail.com",
+      "password": "hashed_password2"
+    },
+    {
+      "id": "93bb",
+      "email": "chelimosylvia280@gmail.com"
+    },
+    {
+      "id": "cdd3",
+      "email": "chelimosylvia280@gmail.com"
+    },
+    {
+      "id": "fbf8",
+      "email": "chelimosylvia280@gmail.com"
+    },
+    {
+      "id": "d474",
+      "email": "chelimosylvia280@gmail.com"
+    },
+    {
+      "id": "0c16",
+      "email": "chelimosylvia280@gmail.com"
+    },
+    {
+      "id": "b4f6",
+      "username": "sylvia",
+      "newPassword": "1234"
+    },
+    {
+      "id": "4c60",
+      "username": "sylvia",
+      "newPassword": "1234"
+    },
+    {
+      "id": "da2a",
+      "username": "sylvia",
+      "newPassword": "1234"
+    },
+    {
+      "id": "969b",
+      "username": "sylvia",
+      "newPassword": "1234"
+    },
+    {
+      "id": "d459",
+      "username": "sylvia",
+      "newPassword": "1234"
+    },
+    {
+      "id": "91f3",
+      "username": "sylvia",
+      "newPassword": "1234"
+    },
+    {
+      "id": "80d1",
+      "username": "sylvia",
+      "newPassword": "12345678"
+    },
+    {
+      "id": "eb31",
+      "username": "sylvia",
+      "newPassword": "12345678"
+    },
+    {
+      "id": "3c36",
+      "username": "sylvia",
+      "newPassword": "12345678"
+    },
+    {
+      "id": "55f0",
+      "username": "sylvia",
+      "newPassword": "12345678"
+    },
+    {
+      "id": "70cb",
+      "username": "sylvua",
+      "newPassword": "87654321"
+    },
+    {
+      "id": "13fd",
+      "username": "sylvia",
+      "newPassword": "chelimo123"
+    }
+  ]
+}
