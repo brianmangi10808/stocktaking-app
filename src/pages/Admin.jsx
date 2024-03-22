@@ -44,10 +44,11 @@ function Admin({clothes, deleteCloth}) {
 
   return (
     <>
+        <AddItem toggle={openForm}/>
         <div className='container'>
             {openModal && <AddClothForm close={closeForm} />}
            
-            <AddItem toggle={openForm}/>
+            
             <div className='stock_items'>
                 
                 {clothItems}

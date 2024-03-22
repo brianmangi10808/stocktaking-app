@@ -18,8 +18,9 @@ function App() {
     .then((res) => res.json())
     .then((data) => {
       setProducts(data)
+
     })
-  })
+  },[])
 
   //DELETE Method
   const deleteClothes = (id) => {
