@@ -18,6 +18,7 @@ function Admin({clothes, deleteCloth}) {
         (
         <div className='item-div' key={item.id}>
             <AdminItemCard 
+            id={item.id}
             img={item.image}
             brand={item.brand}
             type={item.type}

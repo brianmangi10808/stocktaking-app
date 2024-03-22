@@ -1,4 +1,6 @@
-function AdminItemCard({img,brand,type,size,available,price,deleteItem}) {
+import { Link } from "react-router-dom";
+
+function AdminItemCard({id,img,brand,type,size,available,price,deleteItem}) {
     return (
       <div className="card">
         <div className="img-div">
@@ -14,7 +16,12 @@ function AdminItemCard({img,brand,type,size,available,price,deleteItem}) {
           <p>Available: {available}</p>
           <p>Amount:{price}</p>
         </div>
-        <div className="btn-div"><button>Edit</button> <button onClick={deleteItem}>Delete</button></div>
+        <div className="btn-div">
+          <Link to={`/edit/${id}`}><button>Edit</button></Link>
+           
+          <button onClick={deleteItem}>Delete</button>
+          
+        </div>
       </div>
     );
   }

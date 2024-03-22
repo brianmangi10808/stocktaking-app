@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import { useState, useEffect } from 'react'
 import Admin from './pages/Admin.jsx'
 import './css/admin.css'
+import Edit from './components/Admin/Edit.jsx'
 
 function App() {
 
@@ -73,12 +74,19 @@ const addClothes = () => {
                             path='/'
                             element={<Home />}
                         />
-                        <Route
+                       
+                    </Routes>
+                </div>
+                <Routes>
+                <Route
                             path='/admin'
                             element={<Admin clothes={products} deleteCloth={deleteClothes}/>}
                         />
-                    </Routes>
-                </div>
+                <Route
+                  path='/edit/:id'
+                   element={<Edit/>}
+                  />
+                </Routes>
             </Router>
         </>
     )
