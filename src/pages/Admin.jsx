@@ -44,14 +44,20 @@ function Admin({clothes, deleteCloth}) {
 
   return (
     <>
-        <AddItem toggle={openForm}/>
-        <div className='container'>
-            {openModal && <AddClothForm close={closeForm} />}
-           
-            
-            <div className='stock_items'>
+
+        <div className={openModal ? 'blur-background' : ''}>
+            <AddItem toggle={openForm}/>
+        </div>
+        {openModal && <AddClothForm close={closeForm} />}
+        <div className={openModal ? 'blur-background' : ''}>
+            <div className='container' >
                 
-                {clothItems}
+            
+                
+                <div className='stock_items'>
+                    
+                    {clothItems}
+                </div>
             </div>
         </div>
     </>

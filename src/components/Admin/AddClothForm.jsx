@@ -31,15 +31,19 @@ const AddClothForm = ({close}) => {
         }
   return (
     <div id="form-div">
+      
         <form onSubmit={handleSubmit} id="form">
-        <i className='bx bxs-x-circle bx-sm bx-cancel' onClick={close} ></i>
+        <div className="form-title">
+          <h2>Add Cloth Item</h2>
+          <i className='bx bxs-x-circle bx-sm bx-cancel' onClick={close} ></i>
+        </div>
           <div><input type="text" value={image} name="image" placeholder="Image Link" onChange={(e) => setImage(e.target.value)}/></div>
           <div><input type="text" value={brand} name="brand" placeholder="Brand" onChange={(e) => setBrand(e.target.value)}/></div>
           <div><input type="text" value={type} name="type" placeholder="Type" onChange={(e) => setType(e.target.value)}/></div>
           <div><input type="text" value={size} name="size" placeholder="Size" onChange={(e) => setSize(e.target.value)}/> </div>
           <div><input type="text" value={available} name="available" placeholder="Available" onChange={(e) => setAvailable(e.target.value)}/> </div>
           <div><input type="text" value={price} name="price" placeholder="Price" onChange={(e) => setPrice(e.target.value)}/> </div>
-          <div><button type="submit">Add Cloth</button> </div>
+          <div><button type="submit" className="add-cloth-btn">Add Cloth</button> </div>
         </form>
     </div>
   )

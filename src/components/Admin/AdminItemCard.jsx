@@ -14,12 +14,12 @@ function AdminItemCard({id,img,brand,type,size,available,price,deleteItem}) {
           <p>Type: {type}</p>
           <p>Sizes: {size} </p>
           <p>Available: {available}</p>
-          <p>Amount:{price}</p>
+          <p>Amount: {price}</p>
         </div>
         <div className="btn-div">
-          <Link to={`/edit/${id}`}><button>Edit</button></Link>
+          <Link to={`/edit/${id}`}><button className="edit-btn">Edit</button></Link>
            
-          <button onClick={deleteItem}>Delete</button>
+          <button onClick={deleteItem} className="delete-btn">Delete</button>
           
         </div>
       </div>
