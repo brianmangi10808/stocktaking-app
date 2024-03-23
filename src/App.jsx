@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import LoginPage from './pages/LoginPage'
 import NextPage from './pages/NextPage'
 import ForgotPassword from './pages/ForgotPassword'
+import Signup from './pages/Signup'
 
 function App() {
     return (
@@ -12,7 +13,9 @@ function App() {
                     <Header />
                     <Routes>
                         <Route path='/' element={<Home />} />
+                        <Route path='/signup' element={<Signup />} />
                         <Route path='/login' element={<LoginPage />} />
+
                         <Route path='/NextPage' element={<NextPage />} />
                         <Route path='/ForgotPassword' element={<ForgotPassword />} />
                     </Routes>
