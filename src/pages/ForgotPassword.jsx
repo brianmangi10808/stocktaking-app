@@ -11,9 +11,16 @@ function ForgotPassword() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+
     try {
       if (!username.trim()) {
-        setError('Please enter your username.');
+        setError('Please enter your email.');
+        return;
+      }
+
+      if (!emailPattern.test(username)) {
+        setError('Please enter a valid Gmail address.');
         return;
       }
 
@@ -32,12 +39,12 @@ function ForgotPassword() {
         return;
       }
 
-      const response = await fetch('http://localhost:3000/users', {
+      const response = await fetch('http://localhost:3000/resetPassword', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ username, newPassword }),
+        body: JSON.stringify({ email: username, newPassword }),
       });
 
       if (response.ok) {
@@ -57,7 +64,7 @@ function ForgotPassword() {
       <h2>Reset Password</h2>
       <form onSubmit={handleSubmit} className='forgotpassword-form'>
         <div>
-          <label className='forgotpassword-label'>Username:</label>
+          <label className='forgotpassword-label'>Email:</label>
           <input
             type="text"
             value={username}
@@ -87,8 +94,8 @@ function ForgotPassword() {
           <button type="submit" className='forgotpassword-button'>Reset Password</button>
         </div>
       </form>
-      {error && <div>{error}</div>}
-      {successMessage && <div>{successMessage}</div>}
+      {error && <div className="error-message">{error}</div>}
+      {successMessage && <div className="success-message">{successMessage}</div>}
       <Link to="/" className='forgotpassword-link'>Login</Link>
     </div>
   );

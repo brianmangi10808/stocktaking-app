@@ -1,8 +1,6 @@
-// LoginPage.js
-
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { useAuth } from './AuthContext';
+import axios from 'axios';
 import './LoginPage.css';
 
 function LoginPage() {
@@ -11,13 +9,11 @@ function LoginPage() {
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const navigate = useNavigate();
-  const { login } = useAuth(); 
 
   const handleForgotPassword = () => {
-    // Handle forgot password logic
   };
 
-  const onButtonClick = () => {
+  const onButtonClick = async () => {
     setEmailError("");
     setPasswordError("");
 
@@ -31,19 +27,19 @@ function LoginPage() {
       return;
     }
 
-    if (password.length < 8) {
-      setPasswordError("Password must be 8 characters or longer");
-      return;
-    }
+    try {
+      const response = await axios.post('http://localhost:3000/login', {
+        email,
+        password
+      });
 
-    if (!/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
-      setEmailError("Please enter a valid email address");
-      return;
-    }
+      console.log("Logged in successfully:", response.data);
 
-    // Perform login
-    login();
-    navigate('/NextPage');
+      navigate('/NextPage');
+    } catch (error) {
+      console.error("Login error:", error);
+      setEmailError("Invalid email or password");
+    }
   };
 
   return (
