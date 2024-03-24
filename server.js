@@ -1,39 +1,28 @@
-// server.js
-const express = require('express');
-const bodyParser = require('body-parser');
 const jsonServer = require('json-server');
-const nodemailer = require('nodemailer');
+const fs = require('fs');
+const bodyParser = require('body-parser');
 
-const app = express();
-const PORT = process.env.PORT || 5000;
-
-app.use(bodyParser.json());
-
-// Create a JSON Server
 const server = jsonServer.create();
-
-// Load db.json
-const router = jsonServer.router('db.json');
-
-// Middlewares
+const router = jsonServer.router('db.json'); 
 const middlewares = jsonServer.defaults();
 
-// Use default middlewares (logger, static, cors)
 server.use(middlewares);
-
-// Use router
-server.use(router);
-
-// Reset password endpoint
-app.post('/reset-password', (req, res) => {
-  // Password reset logic here
-});
-
-// Function to send password reset email
-function sendPasswordResetEmail(email, resetToken) {
-  // Email sending logic here
-}
-
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+server.use(bodyParser.json());
+server.post('/resetPassword', (req, res) => {
+    const { email, newPassword } = req.body;
+  
+    const user = db.users.find(user => user.email === email);
+  
+    if (user) {
+      user.password = newPassword;
+      fs.writeFileSync('db.json', JSON.stringify(db));
+      res.status(200).json({ message: 'Password reset successful.' });
+    } else {
+      res.status(404).json({ message: 'User not found.' });
+    }
+  });
+  
+  server.use(router);
+server.listen(3000, () => {
+  console.log('JSON Server is running');
 });

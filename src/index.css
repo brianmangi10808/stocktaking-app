@@ -5,12 +5,13 @@
 
     color-scheme: light dark;
     color: rgba(255, 255, 255, 0.87);
-    background-color: #dfe0e0;
+    background-color: #0f0f0f;
 
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    
 }
 
 * {
@@ -66,6 +67,7 @@ button,
     background-color: #1a1a1a;
     cursor: pointer;
     transition: border-color 0.25s;
+    top: 70%;
 }
 button:hover {
     border-color: #646cff;

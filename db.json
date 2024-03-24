@@ -2,93 +2,152 @@
   "users": [
     {
       "id": "1",
-      "email": "user1@gmail.com",
-      "password": "hashed_password1"
+      "email": "user@example.com",
+      "password": "password123"
     },
     {
-      "id": "2",
-      "email": "user2@gmail.com",
-      "password": "hashed_password2"
+      "id": "d1c0",
+      "email": "sylvia@gmail.com",
+      "password": "1234"
     },
     {
-      "id": "93bb",
-      "email": "chelimosylvia280@gmail.com"
+      "id": "7ba7",
+      "email": "sylvia",
+      "password": "123456789"
     },
     {
-      "id": "cdd3",
-      "email": "chelimosylvia280@gmail.com"
-    },
-    {
-      "id": "fbf8",
-      "email": "chelimosylvia280@gmail.com"
-    },
-    {
-      "id": "d474",
-      "email": "chelimosylvia280@gmail.com"
-    },
-    {
-      "id": "0c16",
-      "email": "chelimosylvia280@gmail.com"
-    },
-    {
-      "id": "b4f6",
-      "username": "sylvia",
-      "newPassword": "1234"
-    },
-    {
-      "id": "4c60",
-      "username": "sylvia",
-      "newPassword": "1234"
-    },
-    {
-      "id": "da2a",
-      "username": "sylvia",
-      "newPassword": "1234"
-    },
-    {
-      "id": "969b",
-      "username": "sylvia",
-      "newPassword": "1234"
-    },
-    {
-      "id": "d459",
-      "username": "sylvia",
-      "newPassword": "1234"
-    },
-    {
-      "id": "91f3",
-      "username": "sylvia",
-      "newPassword": "1234"
-    },
-    {
-      "id": "80d1",
-      "username": "sylvia",
+      "id": "2b0b",
+      "email": "chelimo@gmail.com",
       "newPassword": "12345678"
     },
     {
-      "id": "eb31",
-      "username": "sylvia",
+      "id": "bf06",
+      "email": "s@gmail.com",
+      "newPassword": "123456789"
+    }
+  ],
+  "login": [
+    {
+      "endpoint": "/login",
+      "method": "POST",
+      "id": "6de7"
+    },
+    {
+      "id": "69c4",
+      "email": "sylvia@gmail.com",
+      "password": "12345678"
+    },
+    {
+      "id": "2a48",
+      "email": "sylvia@gmail.com",
+      "password": "123456789"
+    },
+    {
+      "id": "d9b3",
+      "email": "sylvia@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": "a65a",
+      "email": "sylvia@gmail.com",
+      "password": "12345678"
+    },
+    {
+      "id": "5300",
+      "email": "chelimo@gmail.com",
+      "password": "1234567"
+    },
+    {
+      "id": "8d18",
+      "email": "daniel@gmail.com",
+      "password": "12345678"
+    },
+    {
+      "id": "d61a",
+      "email": "sylvia@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": "9add",
+      "email": "sylvia@gamil.com",
+      "password": "sylvia123"
+    },
+    {
+      "id": "902a",
+      "email": "s",
+      "password": "1234"
+    },
+    {
+      "id": "5213",
+      "email": "s",
+      "password": "1"
+    },
+    {
+      "id": "ca83",
+      "email": "e",
+      "password": "1"
+    },
+    {
+      "id": "4cb3",
+      "email": "sylvia@gmail.com",
+      "password": "1"
+    },
+    {
+      "id": "7080",
+      "email": "s@gmail.com",
+      "password": "12345678"
+    },
+    {
+      "id": "abce",
+      "email": "schelimo@gmail.com",
+      "password": "schelimo123"
+    },
+    {
+      "id": "af34",
+      "email": "s@gmail.com",
+      "password": "123456789"
+    }
+  ],
+  "resetPassword": [
+    {
+      "endpoint": "/ForgotPassword",
+      "method": "POST",
+      "id": "2129"
+    },
+    {
+      "id": "f01d",
+      "email": "s@gmail.com",
+      "newPassword": "123456789"
+    },
+    {
+      "id": "3b03",
+      "email": "sylvia@gmail.com",
       "newPassword": "12345678"
     },
     {
-      "id": "3c36",
-      "username": "sylvia",
+      "id": "504f",
+      "email": "s",
       "newPassword": "12345678"
     },
     {
-      "id": "55f0",
-      "username": "sylvia",
+      "id": "5362",
+      "email": "sylvia@gmail.com",
       "newPassword": "12345678"
     },
     {
-      "id": "70cb",
-      "username": "sylvua",
-      "newPassword": "87654321"
+      "id": "6b96",
+      "email": "schelimo@gmail.com",
+      "newPassword": "schelimo123"
     },
     {
-      "id": "13fd",
-      "username": "sylvia",
-      "newPassword": "chelimo123"
+      "id": "ea6f",
+      "email": "schelimo@gmail.com",
+      "newPassword": "12345678"
+    },
+    {
+      "id": "02b4",
+      "email": "s@gmail.com",
+      "newPassword": "12345678"
     }
   ]
 }
