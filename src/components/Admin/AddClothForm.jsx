@@ -2,7 +2,7 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
 const AddClothForm = ({close}) => {
-    const [image, setImage] = useState("")
+    const [image, setImage] = useState("src/assets/No-image.jpg")
     const [brand, setBrand] = useState("")
     const [type, setType] = useState("")
     const [size, setSize] = useState("")
