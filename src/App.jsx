@@ -3,7 +3,6 @@ import PrivateRoute from './components/PrivateRoute.jsx'
 import Header from './components/Header'
 import Home from './pages/Home'
 import LoginPage from './pages/LoginPage'
-import NextPage from './pages/NextPage'
 import ForgotPassword from './pages/ForgotPassword'
 import Signup from './pages/Signup'
 import Admin from './pages/Admin.jsx'
@@ -23,8 +22,6 @@ function App() {
                 setProducts(data)
             })
     }, [])
-
-    console.log('in app', products[0])
 
     //DELETE Method
     const deleteClothes = (id) => {
@@ -57,11 +54,6 @@ function App() {
                             />
                         }
                     />
-
-                    <Route
-                        path='/NextPage'
-                        element={<NextPage />}
-                    />
                     <Route
                         path='/ForgotPassword'
                         element={<ForgotPassword />}
@@ -69,7 +61,7 @@ function App() {
 
                     <Route
                         path='/admin'
-                        element={<PrivateRoute />}
+                        element={<PrivateRoute isLoggedIn={user.isLoggedIn} />}
                     >
                         <Route
                             path='/admin'
@@ -83,7 +75,7 @@ function App() {
                     </Route>
                     <Route
                         path='/edit'
-                        element={<PrivateRoute />}
+                        element={<PrivateRoute isLoggedIn={user.isLoggedIn} />}
                     >
                         <Route
                             path='/edit/:id'

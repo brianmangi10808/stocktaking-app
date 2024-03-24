@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 function ForgotPassword() {
     const [userEmail, setUserEmail] = useState('')
@@ -41,7 +41,6 @@ function ForgotPassword() {
         if (newData.password === newUserPassword) {
             setReset(true)
         }
-        // console.log('edited obj from db', newData)
     }
 
     const handleSubmit = async (e) => {
@@ -69,20 +68,6 @@ function ForgotPassword() {
             }
 
             editUserPassword(userEmail, newPassword)
-
-            // if (reset) {
-            //     navigate('/admin')
-            // }
-            // if (response.ok) {
-            //     setSuccessMessage('Password reset successful.')
-            //     navigate('/admin')
-            // } else {
-            //     const errorData = await response.json()
-            //     setError(
-            //         errorData.message ||
-            //             'An error occurred. Please try again later.'
-            //     )
-            // }
         } catch (error) {
             console.error('Error resetting password:', error)
             setError('An error occurred. Please try again later.')
@@ -141,12 +126,6 @@ function ForgotPassword() {
                 </form>
                 {error && <div>{error}</div>}
                 {successMessage && <div>{successMessage}</div>}
-                {/* <Link
-                    to='/'
-                    className='forgotpassword-link'
-                >
-                    Login
-                </Link> */}
             </div>
         </div>
     )

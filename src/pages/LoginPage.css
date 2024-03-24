@@ -15,21 +15,7 @@
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
     border-radius: 10px;
-    font-family: poppins;
     font-size: larger;
-
-    /* position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 400px;
-  padding: 90px;
-  transform: translate(-50%, -50%);
-  background: linear-gradient(rgb(231, 200, 137), #101922);
-  box-sizing: border-box;
-  box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
-  border-radius: 10px;
-  font-family: poppins;
-  font-size: larger; */
 }
 
 .login-box h2 {

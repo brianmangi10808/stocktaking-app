@@ -1,7 +1,5 @@
-// import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useRef } from 'react'
-// import Home from './Home'
 import './sign.css'
 
 function Signup() {
@@ -9,18 +7,9 @@ function Signup() {
     const email = useRef()
     const password = useRef()
     const navigate = useNavigate()
-    // const [showHome, setShowHome] = useState(false)
-    // const localSignUp = localStorage.getItem('signup')
-
-    // useEffect(() => {
-    //     if (localSignUp) {
-    //         setShowHome(true)
-    //         // console.log(localSignUp)
-    //     }
-    // })
 
     async function createNewUser(userObj) {
-        const response = await fetch('http://localhost:3000/users', {
+        await fetch('http://localhost:3000/users', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -28,9 +17,6 @@ function Signup() {
             body: JSON.stringify(userObj),
         })
 
-        const data = await response.json()
-        console.log('data from users endpoint', data)
-        // console.log('Create function has been called')
         localStorage.clear()
     }
 
@@ -45,14 +31,10 @@ function Signup() {
             userObj.email = email.current.value
             userObj.password = password.current.value
 
-            // console.log('userObj', userObj)
-
             localStorage.setItem('name', name.current.value)
             localStorage.setItem('email', email.current.value)
             localStorage.setItem('password', password.current.value)
             localStorage.setItem('signup', email.current.value)
-            // alert(`Signed up successfully! Welcome ${name.current.value}`)
-            // window.location.reload()
 
             const newUser = {
                 ...userObj,
@@ -60,7 +42,6 @@ function Signup() {
                 isLoggedIn: false,
             }
 
-            // console.log('newUser', newUser)
             createNewUser(newUser)
             navigate('/login')
         }
@@ -74,7 +55,7 @@ function Signup() {
                     <form action='push'>
                         <div className='input-group'>
                             <div
-                                class='input-field'
+                                className='input-field'
                                 id='nameField'
                             >
                                 <input

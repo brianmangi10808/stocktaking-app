@@ -28,19 +28,11 @@
     align-items: center;
     justify-content: center;
     gap: 20px;
-    /* position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
     background-color: rgba(37, 38, 38, 0.6);
     color: #dfe0e0;
     padding: 20px 0;
     border-radius: 20px;
 }
-
-/* .homepage-elements-container:hover {
-    cursor: pointer;
-} */
 
 .link {
     border-radius: 8px;

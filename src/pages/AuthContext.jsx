@@ -8,8 +8,6 @@ export const AuthProvider = ({ children }) => {
     let tempUser = {}
 
     async function getUserObj(email, password) {
-        // console.log('email value in context', email)
-        //Make a get request to fetch the user object that matches the email in the form
         const response = await fetch(
             `http://localhost:3000/users?email=${email}`
         )
@@ -18,30 +16,13 @@ export const AuthProvider = ({ children }) => {
         const userObj = { ...data[0] }
 
         if (userObj.password === password) {
-            // setUser({
-            // 	...userObj,
-            // 	isLoggedIn: true,
-            // })
-            // newUser = {
-            //     ...userObj,
-            //     isLoggedIn: true,
-            // }
-            console.log('user obj copy of db data', userObj)
-
             tempUser = {
                 ...userObj,
                 isLoggedIn: true,
             }
 
-            console.log('temp user', tempUser)
-            setnewUser((newUser) => tempUser)
-            // console.log('user obj in context', newUser)
+            setnewUser(tempUser)
         }
-        // } else {
-        // 	// alert("Log in credentials don't match.")
-        // 	setIsError(true)
-        // 	setErrorMessage('Invalid login.')
-        // }
     }
 
     const login = () => {

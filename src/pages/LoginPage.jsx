@@ -5,26 +5,20 @@ import { useNavigate, Link } from 'react-router-dom'
 import { useAuth } from './AuthContext'
 import './LoginPage.css'
 
-function LoginPage({ user, setUser }) {
+function LoginPage({ setUser }) {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [emailError, setEmailError] = useState('')
     const [passwordError, setPasswordError] = useState('')
     const navigate = useNavigate()
     const { isLoggedIn, newUser, login, getUserObj } = useAuth()
-    // let tempUser = { ...newUser }
 
     useEffect(() => {
-        setUser(newUser)
+        if (isLoggedIn === true) {
+            setUser(newUser)
+            navigate('/admin')
+        }
     }, [newUser])
-
-    // console.log('user obj outside click function', newUser)
-    // console.log('temp user', tempUser)
-    // setUser(newUser)
-
-    const handleForgotPassword = () => {
-        // Handle forgot password logic
-    }
 
     const onButtonClick = () => {
         setEmailError('')
@@ -53,9 +47,6 @@ function LoginPage({ user, setUser }) {
         // Perform login
         getUserObj(email, password)
         login()
-        // console.log('user obj in login page', tempUser)
-        // setUser(tempUser)
-        navigate('/admin')
     }
 
     return (
@@ -91,7 +82,6 @@ function LoginPage({ user, setUser }) {
                     <Link
                         to='/ForgotPassword'
                         className='forgot-container'
-                        onClick={handleForgotPassword}
                     >
                         Forgot Password?
                     </Link>
