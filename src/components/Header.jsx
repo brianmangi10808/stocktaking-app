@@ -1,6 +1,6 @@
 function Header() {
     return (
-        <div>
+        <div className='header-container'>
             <h1>stocktaking-app</h1>
         </div>
     )
