@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import PrivateRoute from './components/PrivateRoute.jsx'
 import Header from './components/Header'
 import Home from './pages/Home'
 import LoginPage from './pages/LoginPage'
@@ -68,17 +69,27 @@ function App() {
 
                     <Route
                         path='/admin'
-                        element={
-                            <Admin
-                                clothes={products}
-                                deleteCloth={deleteClothes}
-                            />
-                        }
-                    />
+                        element={<PrivateRoute />}
+                    >
+                        <Route
+                            path='/admin'
+                            element={
+                                <Admin
+                                    clothes={products}
+                                    deleteCloth={deleteClothes}
+                                />
+                            }
+                        />
+                    </Route>
                     <Route
-                        path='/edit/:id'
-                        element={<Edit />}
-                    />
+                        path='/edit'
+                        element={<PrivateRoute />}
+                    >
+                        <Route
+                            path='/edit/:id'
+                            element={<Edit />}
+                        />
+                    </Route>
                 </Routes>
             </Router>
         </>
