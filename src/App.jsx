@@ -11,6 +11,7 @@ import { useEffect, useState } from 'react'
 
 function App() {
     const [products, setProducts] = useState([])
+    const [user, setUser] = useState({})
 
     const url = `http://localhost:3000/clothes`
 
@@ -22,6 +23,8 @@ function App() {
             })
     }, [])
 
+    console.log('in app', products[0])
+
     //DELETE Method
     const deleteClothes = (id) => {
         fetch(url + `/${id}`, {
@@ -29,6 +32,7 @@ function App() {
         }).then((res) => (!res.ok ? console.log('Problem') : res.json()))
         window.location.reload()
     }
+
     return (
         <>
             <Router>
@@ -45,7 +49,12 @@ function App() {
                     />
                     <Route
                         path='/login'
-                        element={<LoginPage />}
+                        element={
+                            <LoginPage
+                                user={user}
+                                setUser={setUser}
+                            />
+                        }
                     />
 
                     <Route

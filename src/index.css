@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
 :root {
-    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-family: Poppins, Arial, sans-serif;
     line-height: 1.5;
     font-weight: 400;
 
@@ -45,6 +47,7 @@ h1 {
 
 .header-container {
     /* position: relative; */
+    margin-bottom: 20px;
     background-color: #252626;
     padding: 10px 0;
     /* border-radius: 20px; */
