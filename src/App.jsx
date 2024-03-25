@@ -61,7 +61,11 @@ function App() {
 
                     <Route
                         path='/admin'
-                        element={<PrivateRoute isLoggedIn={user.isLoggedIn} />}
+                        element={
+                            <PrivateRoute
+                                isLoggedIn={localStorage.getItem('isloggedin')}
+                            />
+                        }
                     >
                         <Route
                             path='/admin'
@@ -75,7 +79,11 @@ function App() {
                     </Route>
                     <Route
                         path='/edit'
-                        element={<PrivateRoute isLoggedIn={user.isLoggedIn} />}
+                        element={
+                            <PrivateRoute
+                                isLoggedIn={localStorage.getItem('isloggedin')}
+                            />
+                        }
                     >
                         <Route
                             path='/edit/:id'

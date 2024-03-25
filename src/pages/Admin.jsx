@@ -10,7 +10,7 @@ function Admin({ clothes, deleteCloth }) {
 
     const [query, setQuery] = useState('')
 
-    console.log(clothes[0])
+    // console.log(clothes[0])
 
     const filteredClothes = clothes.filter((item) => {
         const brandSearch = item.brand
