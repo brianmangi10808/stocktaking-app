@@ -17,7 +17,6 @@ function ForgotPassword() {
     }, [reset])
 
     async function editUserPassword(email, newUserPassword) {
-        //Get a user obj
         const response = await fetch(
             `http://localhost:3000/users?email=${email}`
         )
@@ -28,7 +27,6 @@ function ForgotPassword() {
         console.log('edited obj frontend', data[0])
         console.log('id', id)
 
-        //Edit the user obj
         const res = await fetch(`http://localhost:3000/users/${id}`, {
             method: 'PATCH',
             headers: {
