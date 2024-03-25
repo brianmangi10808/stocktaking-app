@@ -19,7 +19,7 @@ function ForgotPassword() {
     async function editUserPassword(email, newUserPassword) {
         //Get a user obj
         const response = await fetch(
-            `http://localhost:3000/users?email=${email}`
+            `https://inventory-data-6knk.onrender.com/users?email=${email}`
         )
         const data = await response.json()
         const id = data[0].id
@@ -29,7 +29,7 @@ function ForgotPassword() {
         console.log('id', id)
 
         //Edit the user obj
-        const res = await fetch(`http://localhost:3000/users/${id}`, {
+        const res = await fetch(`https://inventory-data-6knk.onrender.com/users/${id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',

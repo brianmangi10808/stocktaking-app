@@ -16,7 +16,7 @@ function App() {
     const url = `http://localhost:3000/clothes`
 
     useEffect(() => {
-        fetch(`http://localhost:3000/clothes`)
+        fetch(`https://inventory-data-6knk.onrender.com/clothes`)
             .then((res) => res.json())
             .then((data) => {
                 setProducts(data)
@@ -25,7 +25,7 @@ function App() {
 
     //DELETE Method
     const deleteClothes = (id) => {
-        fetch(url + `/${id}`, {
+        fetch(`https://inventory-data-6knk.onrender.com/${id}`, {
             method: 'DELETE',
         }).then((res) => (!res.ok ? console.log('Problem') : res.json()))
         window.location.reload()
