@@ -2,7 +2,7 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
 const AddClothForm = ({close}) => {
-    const [image, setImage] = useState("src/assets/No-image.jpg")
+    const [image, setImage] = useState("")
     const [brand, setBrand] = useState("")
     const [type, setType] = useState("")
     const [size, setSize] = useState("")
@@ -10,7 +10,13 @@ const AddClothForm = ({close}) => {
     const [price, setPrice] = useState("")
     const navigate = useNavigate()
     
-
+    function setDefaultImage(e) {
+      if (image === '') {
+          setImage('src/assets/No-image.jpg')
+      } else {
+          setImage(e.target.value)
+      }
+  }
     const handleSubmit = (e) => {
         e.preventDefault()
         const jsonData = JSON.stringify({
@@ -21,7 +27,7 @@ const AddClothForm = ({close}) => {
             available: available,
             price: price
         })
-        fetch(`http://localhost:3000/clothes`,{
+        fetch(`https://inventory-data-6knk.onrender.com//clothes`,{
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -41,7 +47,7 @@ const AddClothForm = ({close}) => {
           <h2>Add Cloth Item</h2>
           <i className='bx bxs-x-circle bx-sm bx-cancel' onClick={close} ></i>
         </div>
-          <div><input type="text" value={image} name="image" placeholder="Image Link" onChange={(e) => setImage(e.target.value)}/></div>
+          <div><input type="text" value={image} name="image" placeholder="Image Link" onChange={(e) => setDefaultImage(e)}/></div>
           <div><input type="text" value={brand} name="brand" placeholder="Brand" onChange={(e) => setBrand(e.target.value)}/></div>
           <div><input type="text" value={type} name="type" placeholder="Type" onChange={(e) => setType(e.target.value)}/></div>
           <div><input type="text" value={size} name="size" placeholder="Size" onChange={(e) => setSize(e.target.value)}/> </div>
