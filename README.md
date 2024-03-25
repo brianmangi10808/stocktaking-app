@@ -5,6 +5,7 @@ This is a React web app built for the user to keep track of clothes inventory wi
 ## Screenshots
 
 Your application should look like this on loading.
+Admin
 ![img]()
 
 ## Features
