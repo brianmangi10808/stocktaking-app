@@ -1,6 +1,5 @@
 import { useNavigate } from 'react-router-dom'
 import { useRef } from 'react'
-import './sign.css'
 
 function Signup() {
     const name = useRef()
@@ -49,13 +48,13 @@ function Signup() {
 
     return (
         <>
-            <div className='user-container'>
+            <div className='login-box'>
                 <div className='form-box'>
-                    <h1 className='title'>sign up</h1>
+                    <h2 className='title'>sign up</h2>
                     <form action='push'>
                         <div className='input-group'>
                             <div
-                                className='input-field'
+                                className='user-box'
                                 id='nameField'
                             >
                                 <input
@@ -64,9 +63,8 @@ function Signup() {
                                     placeholder='Name'
                                     name='name'
                                 />
-                                {/* <input type="text" placeholder="Name"> */}
                             </div>
-                            <div className='input-field'>
+                            <div className='user-box'>
                                 <input
                                     type='email'
                                     ref={email}
@@ -75,7 +73,7 @@ function Signup() {
                                 />
                                 {/* <input type="email" placeholder="Email"> */}
                             </div>
-                            <div className='input-field'>
+                            <div className='user-box'>
                                 <input
                                     type='password'
                                     ref={password}
@@ -84,10 +82,10 @@ function Signup() {
                                 {/* <input type="password" placeholder="Password"> */}
                             </div>
                         </div>
-                        <div className='btn-field'>
+                        <div>
                             <button
                                 type='button'
-                                className='signupBtn'
+                                className='inputButton'
                                 onClick={handleClick}
                             >
                                 sign up

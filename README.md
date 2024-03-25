@@ -5,7 +5,24 @@ This is a React web app built for the user to keep track of clothes inventory wi
 ## Screenshots
 
 Your application should look like this on loading.
-![img]()
+
+Home Page
+![img](https://github.com/brianmangi10808/stocktaking-app/blob/Codewars/src/assets/Home.jpeg)
+
+Login Page
+![img](https://github.com/brianmangi10808/stocktaking-app/blob/Codewars/src/assets/Loginpage.png)
+
+Sign Up page
+![img](https://github.com/brianmangi10808/stocktaking-app/blob/Codewars/src/assets/SignupPage.png)
+
+Forgot Password
+![img](https://github.com/brianmangi10808/stocktaking-app/blob/Codewars/src/assets/Forgotpassword.png)
+
+Admin
+![img](https://github.com/brianmangi10808/stocktaking-app/blob/Codewars/src/assets/Admin1.png)
+![img](https://github.com/brianmangi10808/stocktaking-app/blob/Codewars/src/assets/Admin2.png)
+
+
 
 ## Features
 **Add Items**: Easily add new clothing items to the inventory with details like name, type, size, brand, amount, and price.
@@ -44,6 +61,10 @@ You need to have installed
 5. Then run ```npm run dev``` to start develpoment server.
 
 6. Copy the link generated then paste and run in web browser.
+
+7. To log in to the admin page use the following credentials:<br>
+    Email:```jane@gmail.com```<br>
+    Password:```12345678```
 
 ## Author
 The repo is maintained by:

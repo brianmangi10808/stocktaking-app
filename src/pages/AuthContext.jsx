@@ -9,7 +9,7 @@ export const AuthProvider = ({ children }) => {
 
     async function getUserObj(email, password) {
         const response = await fetch(
-            `http://localhost:3000/users?email=${email}`
+            `https://inventory-data-6knk.onrender.com/users?email=${email}`
         )
 
         const data = await response.json()

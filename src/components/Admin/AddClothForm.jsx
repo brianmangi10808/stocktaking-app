@@ -1,22 +1,22 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-const AddClothForm = ({ close }) => {
-    const [image, setImage] = useState('')
-    const [brand, setBrand] = useState('')
-    const [type, setType] = useState('')
-    const [size, setSize] = useState('')
-    const [available, setAvailable] = useState('')
-    const [price, setPrice] = useState('')
+const AddClothForm = ({close}) => {
+    const [image, setImage] = useState("")
+    const [brand, setBrand] = useState("")
+    const [type, setType] = useState("")
+    const [size, setSize] = useState("")
+    const [available, setAvailable] = useState("")
+    const [price, setPrice] = useState("")
     const navigate = useNavigate()
-
+    
     function setDefaultImage(e) {
-        if (image === '') {
-            setImage('src/assets/No-image.jpg')
-        } else {
-            setImage(e.target.value)
-        }
-    }
+      if (image === '') {
+          setImage('src/assets/No-image.jpg')
+      } else {
+          setImage(e.target.value)
+      }
+  }
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -28,8 +28,9 @@ const AddClothForm = ({ close }) => {
             available: available,
             price: price,
         })
-        fetch(`http://localhost:3000/clothes`, {
-            method: 'POST',
+        
+        fetch(`https://inventory-data-6knk.onrender.com/clothes`,{
+            method: "POST",
             headers: {
                 'Content-Type': 'application/json',
             },

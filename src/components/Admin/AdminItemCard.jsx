@@ -38,6 +38,7 @@ function AdminItemCard({
                 </button>
             </div>
         </div>
+        </div>
     )
 }
 

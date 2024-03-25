@@ -6,13 +6,12 @@ function Edit() {
     const [data, setData] = useState([])
     const navigate = useNavigate()
 
-    useEffect(() => {
-        fetch(`http://localhost:3000/clothes/${id}`)
-            .then((res) => res.json())
-            .then((clothes) => setData(clothes))
-            .catch((err) => console.log(err))
-
-        console.log('state in edit page', data)
+    useEffect(()=>{
+        fetch(`https://inventory-data-6knk.onrender.com/clothes/${id}`)
+        .then( res => res.json())
+        .then( clothes => setData(clothes))
+        .catch(err => console.log(err))
+        
     }, [id])
 
     const handleSubmit = (e) => {
@@ -25,8 +24,9 @@ function Edit() {
             available: data.available,
             price: data.price,
         })
-        fetch(`http://localhost:3000/clothes/${id}`, {
-            method: 'PATCH',
+        
+        fetch(`https://inventory-data-6knk.onrender.com/${id}`,{
+            method: "PATCH",
             headers: {
                 'Content-Type': 'application/json',
             },
