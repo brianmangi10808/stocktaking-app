@@ -82,34 +82,28 @@ function ForgotPassword() {
                     onSubmit={handleSubmit}
                     className='forgotpassword-form'
                 >
-                    <div>
-                        <label className='forgotpassword-label'>
-                            Username:
-                        </label>
+                    <div className='user-box'>
                         <input
                             type='email'
                             value={userEmail}
+                            placeholder='Email'
                             onChange={(e) => setUserEmail(e.target.value)}
                             required
                         />
                     </div>
-                    <div>
-                        <label className='forgotpassword-label'>
-                            New Password:
-                        </label>
+                    <div className='user-box'>
                         <input
                             type='password'
                             value={newPassword}
+                            placeholder='New password:'
                             onChange={(e) => setNewPassword(e.target.value)}
                             required
                         />
                     </div>
-                    <div>
-                        <label className='forgotpassword-label'>
-                            Confirm New Password:
-                        </label>
+                    <div className='user-box'>
                         <input
                             type='password'
+                            placeholder='Confirm New Password'
                             value={confirmPassword}
                             onChange={(e) => setConfirmPassword(e.target.value)}
                             required
@@ -118,7 +112,7 @@ function ForgotPassword() {
                     <div>
                         <button
                             type='submit'
-                            className='forgotpassword-button'
+                            className='inputButton'
                         >
                             Reset Password
                         </button>

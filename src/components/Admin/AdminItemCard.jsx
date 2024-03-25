@@ -30,6 +30,7 @@ function AdminItemCard({
            
           <button onClick={deleteItem} className="delete-btn">Delete</button>
         </div>
+        </div>
     )
 }
 
