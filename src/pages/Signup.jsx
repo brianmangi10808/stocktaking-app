@@ -63,7 +63,6 @@ function Signup() {
                                     placeholder='Name'
                                     name='name'
                                 />
-                                {/* <input type="text" placeholder="Name"> */}
                             </div>
                             <div className='user-box'>
                                 <input
