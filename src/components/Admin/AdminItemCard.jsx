@@ -1,6 +1,15 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom'
 
-function AdminItemCard({id,img,brand,type,size,available,price,deleteItem}) {
+function AdminItemCard({
+    id,
+    img,
+    brand,
+    type,
+    size,
+    available,
+    price,
+    deleteItem,
+}) {
     return (
       <div className="card">
         <div className="img-div">
@@ -20,11 +29,8 @@ function AdminItemCard({id,img,brand,type,size,available,price,deleteItem}) {
           <Link to={`/edit/${id}`}><button className="edit-btn">Edit</button></Link>
            
           <button onClick={deleteItem} className="delete-btn">Delete</button>
-          
         </div>
-      </div>
-    );
-  }
-  
-  export default AdminItemCard;
-  
+    )
+}
+
+export default AdminItemCard

@@ -1,23 +1,45 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState } from 'react'
 
-const AuthContext = createContext();
+const AuthContext = createContext()
 
 export const AuthProvider = ({ children }) => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(false)
+    const [newUser, setnewUser] = useState({})
+    let tempUser = {}
 
-  const login = () => {
-    setIsLoggedIn(true);
-  };
+    async function getUserObj(email, password) {
+        const response = await fetch(
+            `http://localhost:3000/users?email=${email}`
+        )
 
-  const logout = () => {
-    setIsLoggedIn(false);
-  };
+        const data = await response.json()
+        const userObj = { ...data[0] }
 
-  return (
-    <AuthContext.Provider value={{ isLoggedIn, login, logout }}>
-      {children}
-    </AuthContext.Provider>
-  );
-};
+        if (userObj.password === password) {
+            tempUser = {
+                ...userObj,
+                isLoggedIn: true,
+            }
 
-export const useAuth = () => useContext(AuthContext);
+            setnewUser(tempUser)
+        }
+    }
+
+    const login = () => {
+        setIsLoggedIn(true)
+    }
+
+    const logout = () => {
+        setIsLoggedIn(false)
+    }
+
+    return (
+        <AuthContext.Provider
+            value={{ isLoggedIn, newUser, login, logout, getUserObj }}
+        >
+            {children}
+        </AuthContext.Provider>
+    )
+}
+
+export const useAuth = () => useContext(AuthContext)
