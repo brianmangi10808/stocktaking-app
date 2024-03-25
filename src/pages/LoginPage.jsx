@@ -16,6 +16,7 @@ function LoginPage({ setUser }) {
     useEffect(() => {
         if (isLoggedIn === true) {
             setUser(newUser)
+            localStorage.setItem('isloggedin', newUser.isLoggedIn)
             navigate('/admin')
         }
     }, [newUser])
