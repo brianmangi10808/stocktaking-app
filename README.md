@@ -6,7 +6,8 @@ This is a React web app built for the user to keep track of clothes inventory wi
 
 Your application should look like this on loading.
 Admin
-![img]()
+![img](https://github.com/brianmangi10808/stocktaking-app/blob/Codewars/src/assets/Admin1.png)
+![img](https://github.com/brianmangi10808/stocktaking-app/blob/Codewars/src/assets/Admin2.png)
 
 ## Features
 **Add Items**: Easily add new clothing items to the inventory with details like name, type, size, brand, amount, and price.
