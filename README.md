@@ -7,7 +7,7 @@ This is a React web app built for the user to keep track of clothes inventory wi
 Your application should look like this on loading.
 
 Home Page
-![img](https://github.com/brianmangi10808/stocktaking-app/blob/Codewars/src/assets/Loginpage.png)
+![img](https://github.com/brianmangi10808/stocktaking-app/blob/Codewars/src/assets/Home.jpeg)
 
 Login Page
 ![img](https://github.com/brianmangi10808/stocktaking-app/blob/Codewars/src/assets/Loginpage.png)
