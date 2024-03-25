@@ -62,6 +62,10 @@ You need to have installed
 
 6. Copy the link generated then paste and run in web browser.
 
+7. To log in to the admin page use the following credentials:<br>
+    Email:```jane@gmail.com```<br>
+    Password:```12345678```
+
 ## Author
 The repo is maintained by:
 - Peter Ngunjiri
