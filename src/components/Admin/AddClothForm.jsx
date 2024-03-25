@@ -27,7 +27,7 @@ const AddClothForm = ({close}) => {
             available: available,
             price: price
         })
-        fetch(`https://inventory-data-6knk.onrender.com//clothes`,{
+        fetch(`https://inventory-data-6knk.onrender.com/clothes`,{
             method: "POST",
             headers: {
               "Content-Type": "application/json",
