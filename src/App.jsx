@@ -13,7 +13,6 @@ function App() {
     const [products, setProducts] = useState([])
     const [user, setUser] = useState({})
 
-    const url = `http://localhost:3000/clothes`
 
     useEffect(() => {
         fetch(`https://inventory-data-6knk.onrender.com/clothes`)
