@@ -11,7 +11,7 @@
     width: 400px;
     padding: 40px;
     transform: translate(-50%, -50%);
-    background: linear-gradient(rgb(231, 200, 137), #101922);
+    background: linear-gradient(rgb(206, 174, 112), #0f0f0f);
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
     border-radius: 10px;
@@ -38,6 +38,9 @@
     border-bottom: 1px solid #fff;
     outline: none;
     background: transparent;
+}
+.user-box input::placeholder {
+    color: black;
 }
 
 .login-box .user-box label {
@@ -70,7 +73,7 @@
     cursor: pointer;
 }
 .forgot-container {
-    color: black;
+    color: rgb(13, 13, 14);
 }
 
 .forgotpassword-container {

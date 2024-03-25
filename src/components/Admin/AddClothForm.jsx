@@ -1,22 +1,22 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-const AddClothForm = ({ close }) => {
-    const [image, setImage] = useState('')
-    const [brand, setBrand] = useState('')
-    const [type, setType] = useState('')
-    const [size, setSize] = useState('')
-    const [available, setAvailable] = useState('')
-    const [price, setPrice] = useState('')
+const AddClothForm = ({close}) => {
+    const [image, setImage] = useState("")
+    const [brand, setBrand] = useState("")
+    const [type, setType] = useState("")
+    const [size, setSize] = useState("")
+    const [available, setAvailable] = useState("")
+    const [price, setPrice] = useState("")
     const navigate = useNavigate()
-
+    
     function setDefaultImage(e) {
-        if (image === '') {
-            setImage('src/assets/No-image.jpg')
-        } else {
-            setImage(e.target.value)
-        }
-    }
+      if (image === '') {
+          setImage('src/assets/No-image.jpg')
+      } else {
+          setImage(e.target.value)
+      }
+  }
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -28,8 +28,10 @@ const AddClothForm = ({ close }) => {
             available: available,
             price: price,
         })
-        fetch(`http://localhost:3000/clothes`, {
-            method: 'POST',
+
+        fetch(`https://inventory-data-6knk.onrender.com/clothes`,{
+            method: "POST",
+
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -87,7 +89,7 @@ const AddClothForm = ({ close }) => {
                         name='size'
                         placeholder='Size'
                         onChange={(e) => setSize(e.target.value)}
-                    />{' '}
+                    />
                 </div>
                 <div>
                     <input
@@ -96,7 +98,7 @@ const AddClothForm = ({ close }) => {
                         name='available'
                         placeholder='Available'
                         onChange={(e) => setAvailable(e.target.value)}
-                    />{' '}
+                    />
                 </div>
                 <div>
                     <input
@@ -105,7 +107,7 @@ const AddClothForm = ({ close }) => {
                         name='price'
                         placeholder='Price'
                         onChange={(e) => setPrice(e.target.value)}
-                    />{' '}
+                    />
                 </div>
                 <div>
                     <button
@@ -113,11 +115,12 @@ const AddClothForm = ({ close }) => {
                         className='add-cloth-btn'
                     >
                         Add Cloth
-                    </button>{' '}
+                    </button>
                 </div>
             </form>
         </div>
-    )
+  )
+
 }
 
 export default AddClothForm
