@@ -72,7 +72,7 @@ The repo is maintained by:
 - Barbara Ndiba
 - Collins Bett
 - Sylvia Chelimo
-- Caleb Kiprop
+
 
 ## LICENSE
 ```
