@@ -24,6 +24,8 @@ function Edit({ getAllClothes }) {
 
     //Edit a clothing item
     async function editItem(itemObj, id) {
+        console.log('item object after form edit', itemObj)
+        console.log('id', id)
         const res = await fetch(
             `https://inventory-data-6knk.onrender.com/clothes/${id}`,
             {
@@ -31,7 +33,7 @@ function Edit({ getAllClothes }) {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(jsonData),
+                body: itemObj,
             }
         )
 
