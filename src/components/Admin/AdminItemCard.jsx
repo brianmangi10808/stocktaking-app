@@ -8,7 +8,8 @@ function AdminItemCard({
     size,
     available,
     price,
-    deleteItem,
+    deleteClothItem,
+    getAllClothes,
 }) {
     return (
         <div className='card'>
@@ -31,7 +32,7 @@ function AdminItemCard({
                 </Link>
 
                 <button
-                    onClick={deleteItem}
+                    onClick={() => deleteClothItem(id)}
                     className='delete-btn'
                 >
                     Delete
