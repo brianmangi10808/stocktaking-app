@@ -13,21 +13,33 @@ function App() {
     const [products, setProducts] = useState([])
     const [user, setUser] = useState({})
 
-
     useEffect(() => {
-        fetch(`https://inventory-data-6knk.onrender.com/clothes`)
-            .then((res) => res.json())
-            .then((data) => {
-                setProducts(data)
-            })
+        getAllClothes()
     }, [])
 
-    //DELETE Method
-    const deleteClothes = (id) => {
-        fetch(`https://inventory-data-6knk.onrender.com/clothes/${id}`, {
-            method: 'DELETE',
-        }).then((res) => (!res.ok ? console.log('Problem') : res.json()))
-        window.location.reload()
+    //Get all clothes
+    async function getAllClothes() {
+        const res = await fetch(
+            'https://inventory-data-6knk.onrender.com/clothes'
+        )
+        const data = await res.json()
+        setProducts(data)
+    }
+
+    //Delete a clothes item
+    async function deleteClothItem(id) {
+        const res = await fetch(
+            `https://inventory-data-6knk.onrender.com/clothes/${id}`,
+            {
+                method: 'DELETE',
+            }
+        )
+        const data = await res.json()
+        console.log('Item deleted successfully', data)
+
+        //Get the clothes from the db again to cause a state change and a component rerender
+        //This way the changes are visible without refreshing the page
+        getAllClothes()
     }
 
     return (
@@ -71,7 +83,8 @@ function App() {
                             element={
                                 <Admin
                                     clothes={products}
-                                    deleteCloth={deleteClothes}
+                                    getAllClothes={getAllClothes}
+                                    deleteClothItem={deleteClothItem}
                                 />
                             }
                         />

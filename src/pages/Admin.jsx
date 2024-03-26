@@ -5,12 +5,10 @@ import '../css/admin.css'
 import AdminItemCard from '../components/Admin/AdminItemCard'
 import Search from '../components/Admin/Search'
 
-function Admin({ clothes, deleteCloth }) {
+function Admin({ clothes, getAllClothes, deleteClothItem }) {
     const [openModal, setopenModal] = useState(false)
 
     const [query, setQuery] = useState('')
-
-    // console.log(clothes[0])
 
     const filteredClothes = clothes.filter((item) => {
         const brandSearch = item.brand
@@ -34,9 +32,8 @@ function Admin({ clothes, deleteCloth }) {
                 size={item.size}
                 available={item.available}
                 price={item.price}
-                deleteItem={() => {
-                    deleteCloth(item.id)
-                }}
+                deleteClothItem={deleteClothItem}
+                getAllClothes={getAllClothes}
             />
         </div>
     ))
@@ -63,7 +60,12 @@ function Admin({ clothes, deleteCloth }) {
                     <AddItem toggle={openForm} />
                 </div>
             </div>
-            {openModal && <AddClothForm close={closeForm} />}
+            {openModal && (
+                <AddClothForm
+                    closeForm={closeForm}
+                    getAllClothes={getAllClothes}
+                />
+            )}
             <div className={openModal ? 'blur-background' : ''}>
                 <div className='container'>
                     <div className='stock_items'>{clothItems}</div>
