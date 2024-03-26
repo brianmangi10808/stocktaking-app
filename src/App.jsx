@@ -99,7 +99,7 @@ function App() {
                     >
                         <Route
                             path='/edit/:id'
-                            element={<Edit />}
+                            element={<Edit getAllClothes={getAllClothes} />}
                         />
                     </Route>
                 </Routes>
