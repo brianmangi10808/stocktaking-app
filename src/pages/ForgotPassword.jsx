@@ -23,9 +23,10 @@ function ForgotPassword() {
         const data = await response.json()
         const id = data[0].id
         data[0].password = newUserPassword
+        data[0].isLoggedIn = true
 
-        console.log('edited obj frontend', data[0])
-        console.log('id', id)
+        // console.log('edited obj frontend', data[0])
+        // console.log('id', id)
 
         //Edit the user obj
         const res = await fetch(`https://inventory-data-6knk.onrender.com/users/${id}`, {
