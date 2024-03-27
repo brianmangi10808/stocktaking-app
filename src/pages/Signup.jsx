@@ -8,7 +8,7 @@ function Signup() {
     const navigate = useNavigate()
 
     async function createNewUser(userObj) {
-        await fetch('https://inventory-app-izxl.onrender.com/users', {
+        await fetch('https://inventory-data-6knk.onrender.com/users', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
